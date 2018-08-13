@@ -1,4 +1,4 @@
-let users =  [
+const users =  [
 	{"id":1,
 		"name":"Leanne Graham",
 		"username":"Bret",
@@ -101,14 +101,17 @@ let users =  [
 		];
 
 
+//create new array without address
 let userUpdate =  users.map(users=> `${users.name} ${users.username} ${users.email} ${users.phone} ${users.website} ${users.company}`);
 	console.log(userUpdate);
 
-// let ordered = userUpdate.sort(function(a, b) {
-// 	let emailA = a.users.email.toLowerCase();
-// 	let emailB = b.users.email.toLowerCase();
-//
-// 	return emailA.localeCompare(emailB);
-// });
-//
-// console.table(ordered);
+
+//show that original array is unmodified
+console.log(users);
+
+
+// sort by email
+const sortedUsers = users.sort((a, b) => a.email > b.email ? 1:-1);
+console.log(sortedUsers);
+
+
